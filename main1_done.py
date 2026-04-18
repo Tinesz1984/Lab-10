@@ -139,13 +139,13 @@ class VoiceAssistant:
             webbrowser.open(url)
 
         except requests.RequestException:
-            self.speak('Ошибка в запросе. Не удалось найти слово.')
+            self.speak('Ошибка в запросе. Не удалось найти запрос.')
         except (KeyError, IndexError, TypeError):
-            self.speak('Слово найдено, но значение извлечь не удалось.')
+            self.speak('Запрос найден, но значение извлечь не удалось.')
 
     def execute_command(self, text):
         if text in ['привет', 'hello', 'hi']:
-            self.speak('Привет. Я готова к работе.')
+            self.speak('Привет. Готово к работе.')
 
         elif text in ['время', 'time']:
             self.get_time()
@@ -163,7 +163,7 @@ class VoiceAssistant:
             self.find_word(text)
 
         elif text in ['закрыть', 'выход', 'stop', 'exit']:
-            self.speak('Бывай. Завершаю программу.')
+            self.speak('Бывай. Закругляемся.')
             return False
 
         else:
